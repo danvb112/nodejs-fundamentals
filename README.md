@@ -45,3 +45,11 @@ Principais características das Transform Streams:
 3. Eventos: Transform Streams emitem eventos similares aos de Readable e Writable Streams, como 'data' para dados disponíveis para leitura, 'end' quando não há mais dados para ler, 'finish' quando todos os dados foram escritos e 'error' em caso de erro durante a transformação.
 
 4. Pipeline: Transform Streams são frequentemente usados em conjunto com o método pipeline para facilitar a criação de tubulações de processamento de dados.
+
+## Buffers
+
+O Buffer é uma representação de um espaço na memória do computador, usado especificamente para transitar dados de uma maneira muito rápida. Os dados armazenados no Buffer são alocados ali para serem tratados posteriormente e enviados para outro lugar, sendo removidos em seguida. Dessa forma, o Buffer oferece maneiras eficientes de salvar e ler dados na memória.
+
+O Node utiliza o modelo de Buffer na leitura e escrita de Streams, pois é mais eficiente ler parcialmente uma informação binária do que uma string, por exemplo. A eficiência do Buffer é particularmente útil em situações em que o desempenho é crucial, como operações de entrada/saída de baixo nível, processamento de arquivos binários e comunicação de rede.
+
+O Buffer foi incorporado ao Node justamente devido à limitação do JavaScript em lidar de forma eficiente com dados binários. Ele proporciona uma solução eficaz para a manipulação direta e rápida de dados binários, preenchendo uma lacuna na capacidade padrão da linguagem JavaScript. 

@@ -53,3 +53,17 @@ O Buffer é uma representação de um espaço na memória do computador, usado e
 O Node utiliza o modelo de Buffer na leitura e escrita de Streams, pois é mais eficiente ler parcialmente uma informação binária do que uma string, por exemplo. A eficiência do Buffer é particularmente útil em situações em que o desempenho é crucial, como operações de entrada/saída de baixo nível, processamento de arquivos binários e comunicação de rede.
 
 O Buffer foi incorporado ao Node justamente devido à limitação do JavaScript em lidar de forma eficiente com dados binários. Ele proporciona uma solução eficaz para a manipulação direta e rápida de dados binários, preenchendo uma lacuna na capacidade padrão da linguagem JavaScript. 
+
+## Middlewares
+
+Middlewares são funções ou conjuntos de funções que têm acesso ao objeto de requisição (request), ao objeto de resposta (response) e à próxima função no ciclo de solicitação-resposta do aplicativo. Eles desempenham um papel fundamental no desenvolvimento de aplicativos web, permitindo que você execute código, faça modificações nas requisições ou respostas, e controle o fluxo da aplicação.
+
+Principais características dos middlewares no Node.js:
+
+1. Encadeamento (Chaining): Os middlewares são geralmente encadeados em uma ordem específica. Cada middleware na cadeia pode realizar operações específicas e, em seguida, passar o controle para o próximo middleware chamando a função next().
+
+2. Manipulação de Requisições e Respostas: Os middlewares têm acesso aos objetos de requisição e resposta, permitindo a manipulação e modificação desses objetos durante o ciclo de vida da solicitação.
+
+3. Controle de Fluxo: Os middlewares oferecem controle sobre o fluxo da execução. Eles podem decidir se a execução deve continuar para o próximo middleware na cadeia ou se deve ser interrompida, baseando-se nas condições específicas do aplicativo.
+
+4. Funções Assíncronas: Os middlewares podem ser funções assíncronas, o que é útil para lidar com operações que envolvem I/O assíncrona, como consultas a bancos de dados ou chamadas a APIs externas.
